@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{business_name}}</title>
+  <meta name="description" content="{{tagline}}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        {{#if logo}}<img src="{{logo}}" alt="{{business_name}}" class="brand-logo" />{{/if}}
+        <span class="brand-name">{{business_name}}</span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        {{#if images}}<a href="#galerie">Galerie</a>{{/if}}
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>{{business_name}}</h1>
+      {{#if tagline}}<p class="hero-tagline">{{tagline}}</p>{{/if}}
+      <a href="#contact" class="btn btn-primary">{{cta_text}}</a>
+    </div>
+  </section>
+
+  {{#if description}}
+  <section id="apropos" class="section">
+    <div class="container">
+      <h2>À propos</h2>
+      <p class="section-text">{{description}}</p>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if services}}
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Nos services</h2>
+      <ul class="services-grid">
+        {{#each services}}
+        <li class="service-card">{{.}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if images}}
+  <section id="galerie" class="section">
+    <div class="container">
+      <h2>Galerie</h2>
+      <div class="gallery-grid">
+        {{#each images}}
+        <img src="{{.}}" alt="{{business_name}}" class="gallery-img" loading="lazy" />
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        {{#if phone}}<li><span class="contact-label">Téléphone</span> <a href="tel:{{phone}}">{{phone}}</a></li>{{/if}}
+        {{#if whatsapp}}<li><span class="contact-label">WhatsApp</span> <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Discuter sur WhatsApp</a></li>{{/if}}
+        {{#if email}}<li><span class="contact-label">Email</span> <a href="mailto:{{email}}">{{email}}</a></li>{{/if}}
+        {{#if address}}<li><span class="contact-label">Adresse</span> {{address}}</li>{{/if}}
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; {{business_name}}</span>
+      {{#if agency_name}}<span class="footer-credit">Site conçu par {{agency_name}}</span>{{/if}}
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

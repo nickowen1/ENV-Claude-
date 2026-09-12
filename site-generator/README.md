@@ -11,11 +11,21 @@ node generate.js data/example-prospect.json
 # -> output/cotonou-electro-services/{index.html, style.css, script.js, assets/}
 ```
 
-Avec un template précis (un seul existe pour l'instant, `vitrine-classique`) :
+Avec un template précis :
 
 ```bash
-node generate.js data/ma-fiche.json --template vitrine-classique
+node generate.js data/ma-fiche.json --template vitrine-corporate
 ```
+
+## Templates disponibles
+
+| Template | Style | Bon pour |
+|---|---|---|
+| `vitrine-classique` (défaut) | Bleu, dégradé, moderne généraliste | Tout secteur, premier envoi type |
+| `vitrine-corporate` | Navy/bleu, flat design, sans ombres, angles nets | Services B2B, artisanat, professions techniques |
+| `vitrine-premium` | Sombre, doré, Playfair Display, boutons arrondis | Boutiques, beauté, restauration, prestations haut de gamme |
+
+`vitrine-corporate` et `vitrine-premium` réutilisent des palettes de couleurs et associations typographiques réelles de la base de données locale du skill [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (nextlevelbuilder, licence MIT — palettes "B2B Service" et "E-commerce Luxury", typographies "Modern Professional" et "Classic Elegant"), pas des choix arbitraires.
 
 Ouvre ensuite `output/<slug>/index.html` directement dans un navigateur pour vérifier avant envoi.
 

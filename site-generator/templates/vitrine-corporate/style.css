@@ -1,0 +1,234 @@
+/*
+ * Palette et typographie issues de la base de données locale du skill
+ * "ui-ux-pro-max" (nextlevelbuilder, MIT) : palette "B2B Service"
+ * (colors.csv) + association typographique "Modern Professional"
+ * (typography.csv, Poppins/Open Sans). Style visuel : flat design /
+ * minimalisme suisse (styles.csv) — pas d'ombres, angles nets.
+ * https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+ */
+
+:root {
+  --primary-color: {{primary_color}};
+  --navy: #0F172A;
+  --accent: #0369A1;
+  --text-color: #020617;
+  --muted-color: #475569;
+  --bg-alt: #F8FAFC;
+  --border-color: #E2E8F0;
+  --max-width: 1080px;
+  --radius: 2px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.brand-logo { height: 34px; width: auto; }
+
+.site-nav { display: flex; gap: 28px; }
+
+.site-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle span { width: 22px; height: 2px; background: var(--navy); }
+
+/* Hero — flat, pas de gradient */
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 96px 0;
+  text-align: left;
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  margin: 0 0 14px;
+  max-width: 720px;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: #CBD5E1;
+  max-width: 560px;
+  margin: 0 0 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #0284c7; }
+
+/* Sections */
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg-alt); }
+.section-dark { background: var(--navy); color: #fff; }
+.section-dark h2 { color: #fff; }
+.section-dark .contact-label { color: #94A3B8; }
+.section-dark .contact-list a { color: #7DD3FC; }
+.section-dark .contact-list li { border-bottom-color: #1E293B; }
+
+.section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.section-text {
+  max-width: 720px;
+  color: var(--muted-color);
+  font-size: 1.02rem;
+}
+
+/* Services */
+.services-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.service-card {
+  background: #fff;
+  padding: 22px;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.contact-list a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.contact-label { color: var(--muted-color); font-weight: 600; }
+
+/* Footer */
+.site-footer { background: #020617; color: #94A3B8; padding: 22px 0; font-size: 0.88rem; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-credit { opacity: 0.8; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: none;
+  }
+
+  .site-nav.open { display: flex; }
+}
