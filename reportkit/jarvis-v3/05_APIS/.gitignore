@@ -1,0 +1,7 @@
+# Les fichiers *.md de ce dossier sont des gabarits (nom du service, projet
+# concerné) — pas d'endroit pour une vraie clé. Toute valeur réelle va dans
+# un fichier local jamais suivi par Git, ou mieux, dans un gestionnaire de
+# secrets externe référencé par son nom uniquement.
+.env
+*.local.md
+secrets/

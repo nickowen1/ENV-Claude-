@@ -1,0 +1,5 @@
+---
+description: "Jarvis — voir 00_SYSTEM/commands/snapshot.md (source de vérité, jamais dupliquée ici)"
+---
+
+@../../00_SYSTEM/commands/snapshot.md

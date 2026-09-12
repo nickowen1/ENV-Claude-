@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "ask": [
+      "Write(01_IDENTITY/**)",
+      "Edit(01_IDENTITY/**)",
+      "Write(03_PROJECTS/**)",
+      "Edit(03_PROJECTS/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/00_SYSTEM/scripts/backup_before_write.py\""
+          }
+        ]
+      }
+    ]
+  }
+}
