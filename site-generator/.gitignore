@@ -1,0 +1,3 @@
+# Sites générés : artefacts par prospect, pas versionnés.
+output/*
+!output/.gitkeep

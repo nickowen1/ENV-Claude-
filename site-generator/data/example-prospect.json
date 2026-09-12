@@ -1,0 +1,21 @@
+{
+  "business_name": "Cotonou Électro Services",
+  "tagline": "Vente et réparation d'appareils électroménagers à Cotonou",
+  "sector": "Électroménager",
+  "description": "Depuis 2015, Cotonou Électro Services accompagne particuliers et entreprises pour l'achat, l'installation et la réparation d'appareils électroménagers dans tout le Grand Cotonou.",
+  "services": [
+    "Vente de réfrigérateurs et congélateurs",
+    "Réparation toutes marques",
+    "Installation de climatiseurs",
+    "Contrat d'entretien annuel"
+  ],
+  "images": [],
+  "logo": "",
+  "primary_color": "#0b5fff",
+  "cta_text": "Demander un devis",
+  "phone": "+229 97 00 00 00",
+  "whatsapp": "22997000000",
+  "email": "contact@cotonou-electro.example",
+  "address": "Quartier Fidjrossè, Cotonou, Bénin",
+  "agency_name": ""
+}
