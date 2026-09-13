@@ -34,13 +34,13 @@ Bibliothèque personnelle de skills Claude auditées avant adoption — skills c
 | `find-skills` | Externe | VALIDÉ AVEC RÉSERVE |
 | `muapi-ugc-video-factory` | Externe | VALIDÉ AVEC RÉSERVE |
 | `humanizer` | Externe | VALIDÉ AVEC RÉSERVE |
-| `similarweb-analytics` | Externe | À CORRIGER AVANT USAGE |
+| `similarweb-analytics` | Externe | VALIDÉ AVEC RÉSERVE *(corrigé le 2026-09-13)* |
 
 Détail de chaque verdict dans le `AUDIT.md` du dossier correspondant.
 
 ## À surveiller particulièrement (lire avant usage, pas juste le tableau)
 
-- **`similarweb-analytics`** : câblé sur l'infrastructure de la plateforme Manus (`/opt/.manus/.sandbox-runtime`), ne fonctionne pas tel quel dans Claude Code — nécessite une réécriture avec un vrai client API SimilarWeb avant d'être utilisable.
+- **`similarweb-analytics`** : corrigé — importait à l'origine un module propre à la plateforme Manus, remplacé par un vrai client HTTP testé. Réserve restante : vérifier le chemin exact des endpoints (hors `global-rank`, confirmé stable) contre son propre plan d'abonnement SimilarWeb avant un usage en production.
 - **`muapi-ugc-video-factory`** : génère des vidéos publicitaires imitant un témoignage utilisateur authentique à partir d'une photo réelle — s'assurer du consentement de la personne et divulguer le caractère généré/synthétique avant toute diffusion publicitaire.
 - **`humanizer`** : supprime les "signatures" stylistiques de texte généré par IA. Le skill est honnêtement cadré autour de la qualité d'écriture (pas de mention de contournement de détecteurs), mais le mécanisme reste par nature à double usage — à ne pas utiliser dans un contexte académique ou de conformité de plateforme sans réflexion préalable.
 - **`find-skills`** : fait reposer la découverte/installation de skills sur un registre tiers non-Anthropic (skills.sh) et sur `npx skills add ... -y`, qui saute la confirmation d'installation — suivre les vérifications que le skill recommande lui-même (réputation, nombre d'installs) avant d'accepter une suggestion.
