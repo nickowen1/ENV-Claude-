@@ -158,6 +158,61 @@ body {
   font-weight: 500;
 }
 
+/* Team */
+.team-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.team-name {
+  display: block;
+  font-weight: 700;
+}
+
+.team-role {
+  display: block;
+  color: var(--muted-color);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: var(--bg-alt);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 0;
+}
+
+.testimonial-card p {
+  margin: 0 0 12px;
+  font-style: italic;
+}
+
+.testimonial-card cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--muted-color);
+}
+
 /* Gallery */
 .gallery-grid {
   display: grid;

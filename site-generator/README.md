@@ -21,11 +21,14 @@ node generate.js data/ma-fiche.json --template vitrine-corporate
 
 | Template | Style | Bon pour |
 |---|---|---|
-| `vitrine-classique` (défaut) | Bleu, dégradé, moderne généraliste | Tout secteur, premier envoi type |
-| `vitrine-corporate` | Navy/bleu, flat design, sans ombres, angles nets | Services B2B, artisanat, professions techniques |
-| `vitrine-premium` | Sombre, doré, Playfair Display, boutons arrondis | Boutiques, beauté, restauration, prestations haut de gamme |
+| `vitrine-classique` (défaut) | Bleu, dégradé, moderne généraliste | Formation, services B2B de terrain (nettoyage, sécurité), tout secteur en premier envoi type |
+| `vitrine-corporate` | Navy/bleu, flat design, sans ombres, angles nets | Cabinets comptables/fiscaux/juridiques/RH, conseil |
+| `vitrine-premium` | Sombre, doré, Playfair Display, boutons arrondis | Architecture, ingénierie, bureaux d'études (met en valeur des réalisations en galerie) |
+| `vitrine-sante` | Bleu-vert calme, Nunito/Inter, bouton "Appeler" toujours visible | Cliniques, cabinets médicaux, opticiens — CTA RDV/WhatsApp mis en avant dès le hero |
 
-`vitrine-corporate` et `vitrine-premium` réutilisent des palettes de couleurs et associations typographiques réelles de la base de données locale du skill [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (nextlevelbuilder, licence MIT — palettes "B2B Service" et "E-commerce Luxury", typographies "Modern Professional" et "Classic Elegant"), pas des choix arbitraires.
+`vitrine-corporate` et `vitrine-premium` réutilisent des palettes de couleurs et associations typographiques réelles de la base de données locale du skill [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (nextlevelbuilder, licence MIT — palettes "B2B Service" et "E-commerce Luxury", typographies "Modern Professional" et "Classic Elegant"), pas des choix arbitraires. `vitrine-sante` suit les conventions UI usuelles du secteur santé (bleu-vert rassurant, vert pour les actions de contact) plutôt qu'une palette de cette base de données.
+
+Ce mapping niche → template a été construit à partir d'un rapport de prospection réel (26 prospects qualifiés, secteurs Bénin), pas au hasard — voir la répartition des sous-secteurs pour ajuster si de nouvelles niches apparaissent.
 
 Ouvre ensuite `output/<slug>/index.html` directement dans un navigateur pour vérifier avant envoi.
 
@@ -48,6 +51,9 @@ Ouvre ensuite `output/<slug>/index.html` directement dans un navigateur pour vé
 | `address` | non | Affichée telle quelle. |
 | `sector` | non | Informatif seulement pour l'instant (secteur d'activité). |
 | `agency_name` | non | Si renseigné, affiche "Site conçu par [agency_name]" en pied de page. |
+| `team` | non | Liste d'objets `{ "name": "...", "role": "..." }` — section "Notre équipe". Masquée si vide. |
+| `hours` | non | Texte libre (ex. `"Lun-Ven 8h-18h, Sam 9h-13h"`), affiché dans la section Contact. |
+| `testimonials` | non | Liste d'objets `{ "quote": "...", "author": "..." }` — section témoignages/avis. Masquée si vide. |
 
 Les fichiers `logo`/`images` locaux référencés dans le JSON sont recherchés **relativement à l'emplacement du fichier JSON lui-même**, puis copiés dans `output/<slug>/assets/`. Une URL (`http://` ou `https://`) est utilisée telle quelle, sans copie.
 
@@ -57,7 +63,8 @@ Crée un dossier sous `templates/<nom>/` avec `index.html`, `style.css`, `script
 
 - `{{champ}}` — insère la valeur du champ (échappée pour le HTML).
 - `{{#if champ}}...{{/if}}` — n'affiche le bloc que si le champ est renseigné (ou si la liste n'est pas vide).
-- `{{#each champ}}...{{.}}...{{/each}}` — répète le bloc pour chaque élément d'une liste, `{{.}}` référence l'élément courant.
+- `{{#each champ}}...{{.}}...{{/each}}` — répète le bloc pour chaque élément d'une liste de chaînes, `{{.}}` référence l'élément courant.
+- `{{#each champ}}...{{.propriete}}...{{/each}}` — pareil pour une liste d'objets (ex. `team`, `testimonials`), `{{.name}}`/`{{.role}}`/`{{.quote}}`/`{{.author}}` référencent les propriétés de l'élément courant.
 
 ## Prochaine étape (hors périmètre de ce premier tour)
 

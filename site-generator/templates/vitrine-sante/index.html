@@ -7,7 +7,7 @@
   <meta name="description" content="{{tagline}}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,11 +22,11 @@
       </button>
       <nav class="site-nav" id="site-nav">
         <a href="#apropos">À propos</a>
-        <a href="#services">Services</a>
+        <a href="#services">Spécialités</a>
         {{#if team}}<a href="#equipe">Équipe</a>{{/if}}
-        {{#if images}}<a href="#galerie">Galerie</a>{{/if}}
         {{#if testimonials}}<a href="#avis">Avis</a>{{/if}}
         <a href="#contact">Contact</a>
+        {{#if phone}}<a href="tel:{{phone}}" class="btn btn-header">Appeler</a>{{/if}}
       </nav>
     </div>
   </header>
@@ -35,7 +35,10 @@
     <div class="container hero-inner">
       <h1>{{business_name}}</h1>
       {{#if tagline}}<p class="hero-tagline">{{tagline}}</p>{{/if}}
-      <a href="#contact" class="btn btn-primary">{{cta_text}}</a>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">{{cta_text}}</a>
+        {{#if whatsapp}}<a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener" class="btn btn-whatsapp">Écrire sur WhatsApp</a>{{/if}}
+      </div>
     </div>
   </section>
 
@@ -51,7 +54,7 @@
   {{#if services}}
   <section id="services" class="section section-alt">
     <div class="container">
-      <h2>Nos services</h2>
+      <h2>Nos spécialités</h2>
       <ul class="services-grid">
         {{#each services}}
         <li class="service-card">{{.}}</li>
@@ -80,7 +83,7 @@
   {{#if images}}
   <section id="galerie" class="section section-alt">
     <div class="container">
-      <h2>Galerie</h2>
+      <h2>Nos locaux</h2>
       <div class="gallery-grid">
         {{#each images}}
         <img src="{{.}}" alt="{{business_name}}" class="gallery-img" loading="lazy" />
@@ -93,7 +96,7 @@
   {{#if testimonials}}
   <section id="avis" class="section">
     <div class="container">
-      <h2>Témoignages</h2>
+      <h2>Avis de nos patients</h2>
       <div class="testimonials-grid">
         {{#each testimonials}}
         <blockquote class="testimonial-card">
@@ -106,9 +109,9 @@
   </section>
   {{/if}}
 
-  <section id="contact" class="section section-alt">
+  <section id="contact" class="section section-alt contact-section">
     <div class="container">
-      <h2>Contact</h2>
+      <h2>Contact &amp; rendez-vous</h2>
       <ul class="contact-list">
         {{#if phone}}<li><span class="contact-label">Téléphone</span> <a href="tel:{{phone}}">{{phone}}</a></li>{{/if}}
         {{#if whatsapp}}<li><span class="contact-label">WhatsApp</span> <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Discuter sur WhatsApp</a></li>{{/if}}

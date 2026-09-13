@@ -1,0 +1,32 @@
+{
+  "business_name": "Clinique Bénin Santé",
+  "tagline": "Une prise en charge médicale de qualité, au cœur de Cotonou",
+  "sector": "Santé",
+  "description": "La Clinique Bénin Santé accueille chaque jour des patients pour des consultations générales et spécialisées, dans un cadre moderne et rassurant, à Fiyègnon, Cotonou.",
+  "services": [
+    "Consultations générales",
+    "Gynécologie",
+    "Pédiatrie",
+    "Analyses de laboratoire",
+    "Échographie"
+  ],
+  "team": [
+    { "name": "Dr. Adéyèmi Kouassi", "role": "Médecin généraliste" },
+    { "name": "Dr. Fatima Alassane", "role": "Gynécologue" },
+    { "name": "Dr. Bio Tchané", "role": "Pédiatre" }
+  ],
+  "testimonials": [
+    { "quote": "Accueil chaleureux et prise en charge rapide, je recommande.", "author": "Marielle A." },
+    { "quote": "Le personnel est très professionnel et à l'écoute.", "author": "Serge K." }
+  ],
+  "images": [],
+  "logo": "",
+  "primary_color": "#0E7490",
+  "cta_text": "Prendre rendez-vous",
+  "phone": "+229 59 28 04 18",
+  "whatsapp": "22959280418",
+  "email": "contact@clinique-benin-sante.example",
+  "address": "Fiyègnon, Cotonou, Bénin",
+  "hours": "Lun-Ven 7h30-19h, Sam 8h-14h",
+  "agency_name": ""
+}

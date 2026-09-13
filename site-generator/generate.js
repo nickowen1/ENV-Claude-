@@ -25,6 +25,9 @@ const DEFAULTS = {
   address: "",
   sector: "",
   agency_name: "",
+  team: [],
+  hours: "",
+  testimonials: [],
 };
 
 function fail(message) {
@@ -53,7 +56,14 @@ function renderEach(template, data) {
   return template.replace(/{{#each (\w+)}}([\s\S]*?){{\/each}}/g, (match, key, inner) => {
     const arr = data[key];
     if (!Array.isArray(arr) || arr.length === 0) return "";
-    return arr.map((item) => inner.replace(/{{\.}}/g, escapeHtml(item))).join("");
+    return arr
+      .map((item) => {
+        if (item && typeof item === "object") {
+          return inner.replace(/{{\.(\w+)}}/g, (m, prop) => escapeHtml(item[prop] || ""));
+        }
+        return inner.replace(/{{\.}}/g, escapeHtml(item));
+      })
+      .join("");
   });
 }
 

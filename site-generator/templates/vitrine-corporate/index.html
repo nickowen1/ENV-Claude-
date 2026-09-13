@@ -23,7 +23,9 @@
       <nav class="site-nav" id="site-nav">
         <a href="#apropos">À propos</a>
         <a href="#services">Services</a>
+        {{#if team}}<a href="#equipe">Équipe</a>{{/if}}
         {{#if images}}<a href="#galerie">Réalisations</a>{{/if}}
+        {{#if testimonials}}<a href="#avis">Avis</a>{{/if}}
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -60,13 +62,45 @@
   </section>
   {{/if}}
 
+  {{#if team}}
+  <section id="equipe" class="section">
+    <div class="container">
+      <h2>Notre équipe</h2>
+      <ul class="team-grid">
+        {{#each team}}
+        <li class="team-card">
+          <span class="team-name">{{.name}}</span>
+          <span class="team-role">{{.role}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  {{/if}}
+
   {{#if images}}
-  <section id="galerie" class="section">
+  <section id="galerie" class="section section-alt">
     <div class="container">
       <h2>Réalisations</h2>
       <div class="gallery-grid">
         {{#each images}}
         <img src="{{.}}" alt="{{business_name}}" class="gallery-img" loading="lazy" />
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if testimonials}}
+  <section id="avis" class="section">
+    <div class="container">
+      <h2>Témoignages</h2>
+      <div class="testimonials-grid">
+        {{#each testimonials}}
+        <blockquote class="testimonial-card">
+          <p>&laquo; {{.quote}} &raquo;</p>
+          <cite>{{.author}}</cite>
+        </blockquote>
         {{/each}}
       </div>
     </div>
@@ -81,6 +115,7 @@
         {{#if whatsapp}}<li><span class="contact-label">WhatsApp</span> <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">Discuter sur WhatsApp</a></li>{{/if}}
         {{#if email}}<li><span class="contact-label">Email</span> <a href="mailto:{{email}}">{{email}}</a></li>{{/if}}
         {{#if address}}<li><span class="contact-label">Adresse</span> {{address}}</li>{{/if}}
+        {{#if hours}}<li><span class="contact-label">Horaires</span> {{hours}}</li>{{/if}}
       </ul>
     </div>
   </section>
