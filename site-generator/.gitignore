@@ -1,3 +1,6 @@
 # Sites générés : artefacts par prospect, pas versionnés.
 output/*
 !output/.gitkeep
+
+# Fiches de vrais prospects (coordonnées de tiers) : jamais versionnées.
+data/prospects/
